@@ -1,0 +1,68 @@
+:root {
+}
+
+header {
+  margin-inline: 4em;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+}
+
+@media (min-width: 600px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+section {
+  padding: 1.5em;
+  margin: 20px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 8px 8px 10px 0px #818181;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label,
+input {
+  margin: 0.15em 0.5em;
+}
+
+form input {
+  margin-bottom: 0.8em;
+}
+
+.div {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.div__button {
+  margin: 0.5em;
+  background-color: blue;
+  border-radius: 10px;
+  padding: 8px;
+  color: white;
+  font-weight: bold;
+  font-size: small;
+  box-shadow: 4px 4px 5px 0px #66a7e4;
+}
+
+.div__button:hover {
+  box-shadow: 6px 6px 8px 0px #66a7e4;
+}
