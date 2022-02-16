@@ -5,13 +5,38 @@ function calcularPrecioConDescuento(precio, descuento) {
   return precioConDescuento;
 }
 
+const cupones = [
+  {
+    nombre: "P4pa",
+    descuento: 15,
+  },
+  {
+    nombre: "0ferta",
+    descuento: 30,
+  },
+  {
+    nombre: "descuento",
+    descuento: 25,
+  },
+];
+
 function onClickButtonPriceDiscount() {
-  const precio = document.getElementById("InputPrice").value;
-  const descuento = document.getElementById("InputDiscount").value;
+  const precioV = document.getElementById("InputPrice").value;
+  const cuponV = document.getElementById("InputCupon").value;
 
-  const precioConDescuento = calcularPrecioConDescuento(precio, descuento);
+  const isCouponValueValid = function (cupon) {
+    return cupon.nombre === cuponV;
+  };
 
-  const resultP = document.getElementById("ResultP");
+  const userCoupon = cupones.find(isCouponValueValid);
 
-  resultP.innerText = `El precio con descuento es: $${precioConDescuento}`;
+  if (!userCoupon) {
+    alert("El cupón " + cuponV + " no es válido");
+  } else {
+    const descuento = userCoupon.descuento;
+    const precioConDescuento = calcularPrecioConDescuento(precioV, descuento);
+
+    const resultP = document.getElementById("ResultP");
+    resultP.innerText = `El precio con descuento es: $${precioConDescuento}`;
+  }
 }
